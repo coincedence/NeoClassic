@@ -7,6 +7,8 @@ def draw_root_picture(coeffsNM, coeffsDN):
     draw_roots(coeffsDN, 'x')
     plt.grid()
     plt.show()
+
+
 def draw_roots(coeffs, marker):
     roots = np.roots(coeffs)
 

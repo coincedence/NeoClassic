@@ -12,9 +12,21 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.setEnabled(True)
+        MainWindow.resize(1446, 628)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
+        MainWindow.setSizePolicy(sizePolicy)
+        MainWindow.setMaximumSize(QtCore.QSize(1820, 780))
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setEnabled(True)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Maximum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.centralwidget.sizePolicy().hasHeightForWidth())
+        self.centralwidget.setSizePolicy(sizePolicy)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setObjectName("verticalLayout")
@@ -34,9 +46,168 @@ class Ui_MainWindow(object):
         self.horizontalLayout.addWidget(self.w_characteristics)
         self.Formula = QtWidgets.QWidget(parent=self.centralwidget)
         self.Formula.setObjectName("Formula")
+        self.gridLayoutWidget = QtWidgets.QWidget(parent=self.Formula)
+        self.gridLayoutWidget.setGeometry(QtCore.QRect(90, 100, 598, 159))
+        self.gridLayoutWidget.setObjectName("gridLayoutWidget")
+        self.gridLayout = QtWidgets.QGridLayout(self.gridLayoutWidget)
+        self.gridLayout.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout.setObjectName("gridLayout")
+        self.upCoef1 = QtWidgets.QTextEdit(parent=self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        self.upCoef1.setFont(font)
+        self.upCoef1.setObjectName("upCoef1")
+        self.gridLayout.addWidget(self.upCoef1, 0, 0, 1, 1)
+        self.downCoef1 = QtWidgets.QTextEdit(parent=self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        self.downCoef1.setFont(font)
+        self.downCoef1.setObjectName("downCoef1")
+        self.gridLayout.addWidget(self.downCoef1, 2, 0, 1, 1)
+        self.downCoef3 = QtWidgets.QTextEdit(parent=self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        self.downCoef3.setFont(font)
+        self.downCoef3.setObjectName("downCoef3")
+        self.gridLayout.addWidget(self.downCoef3, 2, 6, 1, 1)
+        self.label_7 = QtWidgets.QLabel(parent=self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        self.label_7.setFont(font)
+        self.label_7.setObjectName("label_7")
+        self.gridLayout.addWidget(self.label_7, 2, 8, 1, 1)
+        self.label = QtWidgets.QLabel(parent=self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        self.label.setFont(font)
+        self.label.setObjectName("label")
+        self.gridLayout.addWidget(self.label, 0, 2, 1, 1)
+        self.label_6 = QtWidgets.QLabel(parent=self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        self.label_6.setFont(font)
+        self.label_6.setObjectName("label_6")
+        self.gridLayout.addWidget(self.label_6, 2, 5, 1, 1)
+        self.upCoef3 = QtWidgets.QTextEdit(parent=self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        self.upCoef3.setFont(font)
+        self.upCoef3.setObjectName("upCoef3")
+        self.gridLayout.addWidget(self.upCoef3, 0, 6, 1, 1)
+        self.sSquared = QtWidgets.QTextEdit(parent=self.gridLayoutWidget)
+        self.sSquared.setEnabled(False)
+        font = QtGui.QFont()
+        font.setPointSize(5)
+        self.sSquared.setFont(font)
+        self.sSquared.setObjectName("sSquared")
+        self.gridLayout.addWidget(self.sSquared, 0, 4, 1, 1)
+        self.downCoef2 = QtWidgets.QTextEdit(parent=self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        self.downCoef2.setFont(font)
+        self.downCoef2.setObjectName("downCoef2")
+        self.gridLayout.addWidget(self.downCoef2, 2, 3, 1, 1)
+        self.line = QtWidgets.QFrame(parent=self.gridLayoutWidget)
+        self.line.setFrameShape(QtWidgets.QFrame.Shape.HLine)
+        self.line.setFrameShadow(QtWidgets.QFrame.Shadow.Sunken)
+        self.line.setObjectName("line")
+        self.gridLayout.addWidget(self.line, 1, 0, 1, 10)
+        self.sCubed = QtWidgets.QTextEdit(parent=self.gridLayoutWidget)
+        self.sCubed.setEnabled(False)
+        font = QtGui.QFont()
+        font.setPointSize(5)
+        self.sCubed.setFont(font)
+        self.sCubed.setObjectName("sCubed")
+        self.gridLayout.addWidget(self.sCubed, 0, 1, 1, 1)
+        self.upCoef2 = QtWidgets.QTextEdit(parent=self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        self.upCoef2.setFont(font)
+        self.upCoef2.setObjectName("upCoef2")
+        self.gridLayout.addWidget(self.upCoef2, 0, 3, 1, 1)
+        self.label_3 = QtWidgets.QLabel(parent=self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        self.label_3.setFont(font)
+        self.label_3.setObjectName("label_3")
+        self.gridLayout.addWidget(self.label_3, 0, 5, 1, 1)
+        self.sSquared_2 = QtWidgets.QTextEdit(parent=self.gridLayoutWidget)
+        self.sSquared_2.setEnabled(False)
+        font = QtGui.QFont()
+        font.setPointSize(5)
+        self.sSquared_2.setFont(font)
+        self.sSquared_2.setObjectName("sSquared_2")
+        self.gridLayout.addWidget(self.sSquared_2, 2, 4, 1, 1)
+        self.s = QtWidgets.QTextEdit(parent=self.gridLayoutWidget)
+        self.s.setEnabled(False)
+        font = QtGui.QFont()
+        font.setPointSize(5)
+        self.s.setFont(font)
+        self.s.setAcceptDrops(True)
+        self.s.setAutoFillBackground(False)
+        self.s.setObjectName("s")
+        self.gridLayout.addWidget(self.s, 0, 7, 1, 1)
+        self.label_4 = QtWidgets.QLabel(parent=self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        self.label_4.setFont(font)
+        self.label_4.setObjectName("label_4")
+        self.gridLayout.addWidget(self.label_4, 0, 8, 1, 1)
+        self.label_5 = QtWidgets.QLabel(parent=self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        self.label_5.setFont(font)
+        self.label_5.setObjectName("label_5")
+        self.gridLayout.addWidget(self.label_5, 2, 2, 1, 1)
+        self.s_2 = QtWidgets.QTextEdit(parent=self.gridLayoutWidget)
+        self.s_2.setEnabled(False)
+        font = QtGui.QFont()
+        font.setPointSize(5)
+        self.s_2.setFont(font)
+        self.s_2.setObjectName("s_2")
+        self.gridLayout.addWidget(self.s_2, 2, 7, 1, 1)
+        self.upCoef4 = QtWidgets.QTextEdit(parent=self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        self.upCoef4.setFont(font)
+        self.upCoef4.setObjectName("upCoef4")
+        self.gridLayout.addWidget(self.upCoef4, 0, 9, 1, 1)
+        self.downCoef4 = QtWidgets.QTextEdit(parent=self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        self.downCoef4.setFont(font)
+        self.downCoef4.setObjectName("downCoef4")
+        self.gridLayout.addWidget(self.downCoef4, 2, 9, 1, 1)
+        self.sCubed_2 = QtWidgets.QTextEdit(parent=self.gridLayoutWidget)
+        self.sCubed_2.setEnabled(False)
+        font = QtGui.QFont()
+        font.setPointSize(5)
+        self.sCubed_2.setFont(font)
+        self.sCubed_2.setObjectName("sCubed_2")
+        self.gridLayout.addWidget(self.sCubed_2, 2, 1, 1, 1)
+        self.textEdit_15 = QtWidgets.QTextEdit(parent=self.Formula)
+        self.textEdit_15.setEnabled(False)
+        self.textEdit_15.setGeometry(QtCore.QRect(0, 140, 81, 47))
+        font = QtGui.QFont()
+        font.setPointSize(5)
+        self.textEdit_15.setFont(font)
+        self.textEdit_15.setObjectName("textEdit_15")
+        self.calculateButton = QtWidgets.QPushButton(parent=self.Formula)
+        self.calculateButton.setGeometry(QtCore.QRect(420, 290, 201, 51))
+        self.calculateButton.setObjectName("calculateButton")
         self.horizontalLayout.addWidget(self.Formula)
         self.verticalLayout.addLayout(self.horizontalLayout)
         MainWindow.setCentralWidget(self.centralwidget)
+        self.menuBar = QtWidgets.QMenuBar(parent=MainWindow)
+        self.menuBar.setGeometry(QtCore.QRect(0, 0, 1446, 22))
+        self.menuBar.setObjectName("menuBar")
+        self.exit = QtWidgets.QMenu(parent=self.menuBar)
+        self.exit.setObjectName("exit")
+        self.menu_2 = QtWidgets.QMenu(parent=self.menuBar)
+        self.menu_2.setObjectName("menu_2")
+        MainWindow.setMenuBar(self.menuBar)
+        self.menuBar.addAction(self.exit.menuAction())
+        self.menuBar.addAction(self.menu_2.menuAction())
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -44,6 +215,71 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.label_7.setText(_translate("MainWindow", "+"))
+        self.label.setText(_translate("MainWindow", "+"))
+        self.label_6.setText(_translate("MainWindow", "+"))
+        self.sSquared.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Segoe UI\'; font-size:5pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt;\">S</span><span style=\" font-size:18pt; vertical-align:super;\">2</span></p></body></html>"))
+        self.sCubed.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Segoe UI\'; font-size:5pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt;\">S</span><span style=\" font-size:18pt; vertical-align:super;\">3</span></p></body></html>"))
+        self.label_3.setText(_translate("MainWindow", "+"))
+        self.sSquared_2.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Segoe UI\'; font-size:5pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt;\">S</span><span style=\" font-size:18pt; vertical-align:super;\">2</span></p></body></html>"))
+        self.s.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Segoe UI\'; font-size:5pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt;\">S</span></p></body></html>"))
+        self.label_4.setText(_translate("MainWindow", "+"))
+        self.label_5.setText(_translate("MainWindow", "+"))
+        self.s_2.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Segoe UI\'; font-size:5pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt;\">S</span></p></body></html>"))
+        self.sCubed_2.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Segoe UI\'; font-size:5pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt;\">S</span><span style=\" font-size:18pt; vertical-align:super;\">3</span></p></body></html>"))
+        self.textEdit_15.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Segoe UI\'; font-size:5pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt;\">w(s) = </span></p></body></html>"))
+        self.calculateButton.setText(_translate("MainWindow", "DO MAGIC"))
+        self.exit.setTitle(_translate("MainWindow", "Выйти"))
+        self.menu_2.setTitle(_translate("MainWindow", "О разработчиках"))
 from mplwidget import mplwidget
 
 
