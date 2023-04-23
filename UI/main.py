@@ -6,6 +6,7 @@ from pyqtgraph import PlotWidget, plot
 from Math.Characteristics import draw_characteristics
 from Math.Roots import draw_root_picture
 from Math.TransferProcess import draw_transfer_process
+from Math.Weight import draw_weight
 
 
 class MainWindow(QMainWindow):
@@ -34,8 +35,8 @@ class MainWindow(QMainWindow):
 
         draw_root_picture(self.ui.root_picture.canvas, nm, dm)
         draw_transfer_process(self.ui.h_from_t.canvas, nm, dm)
-        draw_characteristics(self.ui.magnitude_graph.canvas, self.ui.phase_graph.canvas, nm, dm)
-
+        draw_characteristics(self.ui.mag_graph.canvas, self.ui.phase_graph.canvas, nm, dm)
+        draw_weight(self.ui.weight_graph.canvas, nm, dm)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
