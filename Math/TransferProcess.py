@@ -15,8 +15,6 @@ def draw_transfer_process(canvas: mplwidget, nm, dm):
 
 
     x, y = step_response(w)
-    plt.plot(x,y)
-    plt.show()
     canvas.axes.grid()
     canvas.axes.plot(x, y)
     canvas.draw()

@@ -10,8 +10,6 @@ def draw_root_picture(canvas:mplwidget, coeffsNM, coeffsDN):
     draw_roots(canvas, coeffsDN, 'x')
 
     canvas.draw()
-    plt.grid()
-    plt.show()
 
 
 def draw_roots(canvas:mplwidget, coeffs, marker):

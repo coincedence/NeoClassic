@@ -22,9 +22,6 @@ def draw_characteristics(mag_canvas: mplwidget, phase_canvas: mplwidget, nm, dm)
     phase_canvas.axes.set_xscale('log')
     phase_canvas.axes.plot(omega, phase)
 
-    plt.plot()
-    plt.show()
-
     mag_canvas.draw()
     phase_canvas.draw()
 
@@ -34,5 +31,3 @@ if __name__ == "__main__":
     den = [1., 1.]
     w = tf(num, den)
     mag, phase, omega = bode_plot(w, dB=True)
-    plt.plot()
-    plt.show()

@@ -13,8 +13,6 @@ def draw_weight(canvas: mplwidget, nm, dm):
     w = tf(num, den)
 
     y, x = impulse(w)
-    plt.plot(x, y)
-    plt.show()
     canvas.axes.grid()
     canvas.axes.plot(x, y)
     canvas.draw()
