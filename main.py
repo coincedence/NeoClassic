@@ -18,7 +18,7 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         self.showFullScreen()
         self.menuBar()
-        self.ui.exit.aboutToShow.connect(lambda: exit())
+        self.ui.exit.aboutToShow.connect(lambda: sys.exit())
 
         self.ui.calculateButton.clicked.connect(self.update_graphs)
 
