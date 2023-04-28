@@ -7,13 +7,13 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-
+from UI.mplwidget import mplwidget
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setEnabled(True)
-        MainWindow.resize(1446, 628)
+        MainWindow.resize(1511, 684)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -31,6 +31,7 @@ class Ui_MainWindow(object):
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setObjectName("verticalLayout")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setSizeConstraint(QtWidgets.QLayout.SizeConstraint.SetFixedSize)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.root_picture = mplwidget(parent=self.centralwidget)
         self.root_picture.setObjectName("root_picture")
@@ -39,15 +40,28 @@ class Ui_MainWindow(object):
         self.h_from_t.setObjectName("h_from_t")
         self.horizontalLayout_2.addWidget(self.h_from_t)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
+        self.horizontalLayout_4 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
+        self.mag_graph = mplwidget(parent=self.centralwidget)
+        self.mag_graph.setObjectName("mag_graph")
+        self.horizontalLayout_4.addWidget(self.mag_graph)
+        self.weight_graph = mplwidget(parent=self.centralwidget)
+        self.weight_graph.setObjectName("weight_graph")
+        self.horizontalLayout_4.addWidget(self.weight_graph)
+        self.verticalLayout.addLayout(self.horizontalLayout_4)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.horizontalLayout.setSizeConstraint(QtWidgets.QLayout.SizeConstraint.SetFixedSize)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.w_characteristics = mplwidget(parent=self.centralwidget)
-        self.w_characteristics.setObjectName("w_characteristics")
-        self.horizontalLayout.addWidget(self.w_characteristics)
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.phase_graph = mplwidget(parent=self.centralwidget)
+        self.phase_graph.setObjectName("phase_graph")
+        self.verticalLayout_3.addWidget(self.phase_graph)
+        self.horizontalLayout.addLayout(self.verticalLayout_3)
         self.Formula = QtWidgets.QWidget(parent=self.centralwidget)
         self.Formula.setObjectName("Formula")
         self.gridLayoutWidget = QtWidgets.QWidget(parent=self.Formula)
-        self.gridLayoutWidget.setGeometry(QtCore.QRect(90, 100, 598, 159))
+        self.gridLayoutWidget.setGeometry(QtCore.QRect(160, 40, 551, 141))
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
         self.gridLayout = QtWidgets.QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
@@ -108,6 +122,7 @@ class Ui_MainWindow(object):
         self.downCoef2.setObjectName("downCoef2")
         self.gridLayout.addWidget(self.downCoef2, 2, 3, 1, 1)
         self.line = QtWidgets.QFrame(parent=self.gridLayoutWidget)
+        self.line.setLineWidth(2)
         self.line.setFrameShape(QtWidgets.QFrame.Shape.HLine)
         self.line.setFrameShadow(QtWidgets.QFrame.Shadow.Sunken)
         self.line.setObjectName("line")
@@ -166,12 +181,6 @@ class Ui_MainWindow(object):
         self.s_2.setFont(font)
         self.s_2.setObjectName("s_2")
         self.gridLayout.addWidget(self.s_2, 2, 7, 1, 1)
-        self.upCoef4 = QtWidgets.QTextEdit(parent=self.gridLayoutWidget)
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        self.upCoef4.setFont(font)
-        self.upCoef4.setObjectName("upCoef4")
-        self.gridLayout.addWidget(self.upCoef4, 0, 9, 1, 1)
         self.downCoef4 = QtWidgets.QTextEdit(parent=self.gridLayoutWidget)
         font = QtGui.QFont()
         font.setPointSize(20)
@@ -185,23 +194,30 @@ class Ui_MainWindow(object):
         self.sCubed_2.setFont(font)
         self.sCubed_2.setObjectName("sCubed_2")
         self.gridLayout.addWidget(self.sCubed_2, 2, 1, 1, 1)
+        self.upCoef4 = QtWidgets.QTextEdit(parent=self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        self.upCoef4.setFont(font)
+        self.upCoef4.setObjectName("upCoef4")
+        self.gridLayout.addWidget(self.upCoef4, 0, 9, 1, 1)
         self.textEdit_15 = QtWidgets.QTextEdit(parent=self.Formula)
         self.textEdit_15.setEnabled(False)
-        self.textEdit_15.setGeometry(QtCore.QRect(0, 140, 81, 47))
+        self.textEdit_15.setGeometry(QtCore.QRect(10, 80, 131, 61))
         font = QtGui.QFont()
         font.setPointSize(5)
         self.textEdit_15.setFont(font)
         self.textEdit_15.setObjectName("textEdit_15")
         self.calculateButton = QtWidgets.QPushButton(parent=self.Formula)
-        self.calculateButton.setGeometry(QtCore.QRect(420, 290, 201, 51))
+        self.calculateButton.setGeometry(QtCore.QRect(450, 200, 201, 31))
         self.calculateButton.setObjectName("calculateButton")
         self.horizontalLayout.addWidget(self.Formula)
         self.verticalLayout.addLayout(self.horizontalLayout)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menuBar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menuBar.setGeometry(QtCore.QRect(0, 0, 1446, 22))
+        self.menuBar.setGeometry(QtCore.QRect(0, 0, 1511, 22))
         self.menuBar.setObjectName("menuBar")
         self.exit = QtWidgets.QMenu(parent=self.menuBar)
+        self.exit.setEnabled(True)
         self.exit.setObjectName("exit")
         self.menu_2 = QtWidgets.QMenu(parent=self.menuBar)
         self.menu_2.setObjectName("menu_2")
@@ -215,9 +231,41 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.upCoef1.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Segoe UI\'; font-size:20pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">1</p></body></html>"))
+        self.downCoef1.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Segoe UI\'; font-size:20pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">5</p></body></html>"))
+        self.downCoef3.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Segoe UI\'; font-size:20pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">7</p></body></html>"))
         self.label_7.setText(_translate("MainWindow", "+"))
         self.label.setText(_translate("MainWindow", "+"))
         self.label_6.setText(_translate("MainWindow", "+"))
+        self.upCoef3.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Segoe UI\'; font-size:20pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">3</p></body></html>"))
         self.sSquared.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -226,6 +274,14 @@ class Ui_MainWindow(object):
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:\'Segoe UI\'; font-size:5pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt;\">S</span><span style=\" font-size:18pt; vertical-align:super;\">2</span></p></body></html>"))
+        self.downCoef2.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Segoe UI\'; font-size:20pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">6</p></body></html>"))
         self.sCubed.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -234,6 +290,14 @@ class Ui_MainWindow(object):
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:\'Segoe UI\'; font-size:5pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt;\">S</span><span style=\" font-size:18pt; vertical-align:super;\">3</span></p></body></html>"))
+        self.upCoef2.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Segoe UI\'; font-size:20pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">2</p></body></html>"))
         self.label_3.setText(_translate("MainWindow", "+"))
         self.sSquared_2.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
@@ -261,6 +325,14 @@ class Ui_MainWindow(object):
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:\'Segoe UI\'; font-size:5pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt;\">S</span></p></body></html>"))
+        self.downCoef4.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Segoe UI\'; font-size:20pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">8</p></body></html>"))
         self.sCubed_2.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -269,6 +341,14 @@ class Ui_MainWindow(object):
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:\'Segoe UI\'; font-size:5pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt;\">S</span><span style=\" font-size:18pt; vertical-align:super;\">3</span></p></body></html>"))
+        self.upCoef4.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Segoe UI\'; font-size:20pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">4</p></body></html>"))
         self.textEdit_15.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -276,11 +356,10 @@ class Ui_MainWindow(object):
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:\'Segoe UI\'; font-size:5pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt;\">w(s) = </span></p></body></html>"))
-        self.calculateButton.setText(_translate("MainWindow", "DO MAGIC"))
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:24pt;\">W(s) = </span></p></body></html>"))
+        self.calculateButton.setText(_translate("MainWindow", "Рассчитать звено"))
         self.exit.setTitle(_translate("MainWindow", "Выйти"))
         self.menu_2.setTitle(_translate("MainWindow", "О разработчиках"))
-from mplwidget import mplwidget
 
 
 if __name__ == "__main__":

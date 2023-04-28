@@ -1,13 +1,13 @@
 from PyQt6 import QtWidgets
 from matplotlib.figure import Figure
-from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg as Canvas
+from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg as Canvas, FigureCanvasQTAgg
 
-class MplCanvas(Canvas):
-    def __init__(self):
-        self.fig = Figure()
-        self.ax = self.fig.add_subplot(111)
-        Canvas.__init__(self, self.fig)
-        Canvas.updateGeometry(self)
+
+class MplCanvas(FigureCanvasQTAgg):
+    def __init__(self, parent=None, width=5, height=4, dpi=100):
+        fig = Figure(figsize=(width, height), dpi=dpi)
+        self.axes = fig.add_subplot(111)
+        super(MplCanvas, self).__init__(fig)
 
 class mplwidget(QtWidgets.QWidget):
     def __init__(self, parent=None):

@@ -1,35 +1,33 @@
-import time
-
-import sympy as sp
+from control import *
 import matplotlib.pyplot as plt
-from sympy.abc import s, t
+from control.matlab import step
+
+from UI import mplwidget
 
 
-def draw_transfer_process(nm, dm, tk):
-    fp = ((nm[0] + nm[1] * s + nm[2] * (s ** 2)) / (dm[0] + dm[1] * s + dm[2] * (s ** 2))) / s
-    ht = sp.inverse_laplace_transform(fp, s, t)
-    f = sp.lambdify(t, ht, modules=['numpy', 'sympy'])
-    dt = 0.01
-    n = int(tk/dt)
-    k = 0
-    t0 = 0
-    x = [0] * n
-    y = [0] * n
+def draw_transfer_process(canvas: mplwidget, nm, dm):
+    canvas.axes.cla()
+    num = nm
+    den = dm
+    print(num)
+    print(den)
+    w = tf(num, den)
 
-    if str(f(0)).__contains__("DiracDelta(0)"):
-        if f(1) == 0:
-            arr_len = 1
-        else:
-            arr_len = float(f(1))
-        plt.arrow(0, 0, 0, arr_len, length_includes_head=True, width=5 * dt, head_width=arr_len * 0.1,
-                  head_length=arr_len * 0.05, edgecolor='none')
-        t0 += dt
-        k += 1
 
-    for i in range(k, n):
-        x[i] = t0
-        y[i] = f(x[i])
-        t0 += dt
+    x, y = step_response(w)
+    canvas.axes.grid()
+    canvas.axes.plot(x, y)
+    canvas.draw()
 
-    plt.plot(x, y)
+
+if __name__ == "__main__":
+    num = [1.]
+    den = [1., 1.]
+    w = tf(num, den)
+    y, x = step(w)
+    plt.plot(x, y, "b")
+    plt.title('Step Responsse ')
+    plt.ylabel('Amplitude')
+    plt.xlabel('Time(sec)')
+    plt.grid(True)
     plt.show()
