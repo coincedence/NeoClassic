@@ -1,4 +1,5 @@
-from MainWindow import Ui_MainWindow
+from UI import MainWindow
+# from MainWindow import Ui_MainWindow
 import sys
 from PyQt6.QtWidgets import *
 from pyqtgraph import PlotWidget, plot
@@ -7,6 +8,7 @@ from Math.Characteristics import draw_characteristics
 from Math.Roots import draw_root_picture
 from Math.TransferProcess import draw_transfer_process
 from Math.Weight import draw_weight
+from UI.MainWindow import Ui_MainWindow
 
 
 class MainWindow(QMainWindow):

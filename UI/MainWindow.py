@@ -7,7 +7,7 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-
+from UI.mplwidget import mplwidget
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -360,7 +360,6 @@ class Ui_MainWindow(object):
         self.calculateButton.setText(_translate("MainWindow", "Рассчитать звено"))
         self.exit.setTitle(_translate("MainWindow", "Выйти"))
         self.menu_2.setTitle(_translate("MainWindow", "О разработчиках"))
-from mplwidget import mplwidget
 
 
 if __name__ == "__main__":
